@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página para ti J</title>
+  <style>
+    body {
+      background: #000;
+      color: #8000ff; /* Morado */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    #mensaje {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+    #instruccion {
+      font-size: 1rem;
+      color: #a883ff;
+    }
+  </style>
+</head>
+<body>
+  <div id="mensaje">¡Hola J! Esta página es para ti 💜</div>
+  <div id="instruccion">Haz clic en cualquier parte de la página para escuchar la canción 🎵</div>
+  <audio id="audio" preload="auto">
+    <source src="head first - christian french [Lyrics Sub. Español].mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+  <script>
+    const audio = document.getElementById('audio');
+    let played = false;
+    document.body.addEventListener('click', function() {
+      if (!played) {
+        audio.play();
+        played = true;
+      }
+    });
+  </script>
+</body>
+</html>
